@@ -1,0 +1,215 @@
+/* hacks */
+
+* {
+	margin: 0;
+}
+
+html{
+	height: 100%;
+}
+
+#clear {
+	clear:both;
+	height:1px;
+	padding:0px;
+	margin:0px;
+	overflow:hidden;}
+	
+.clearfix:after{
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+
+/* Begin my CSS Layout*/
+
+body{
+	background:#fff url(../images/background.gif) repeat top left;
+	padding:15px;
+	margin:0px;
+	height:100%;
+}
+
+p{
+	margin:5px 0px;
+}
+
+input{
+	font:14px Verdana;
+	color:#333;
+	background:#fff;
+	border:1px solid #AFC0C7;
+	padding:5px;
+}
+
+select{
+	font:14px Verdana;
+	color:#333;
+	background:#fff;
+	border:1px solid #AFC0C7;
+	padding:5px;
+	margin:5px 0px;
+}
+
+label{
+	display:block;
+}
+
+#container{
+	width:1000px;
+	margin:0px auto;
+	padding:0px;
+}
+
+#logo{
+	margin:25px 0px 0px 0px;
+}
+
+#nav{
+	font:normal 20px "Trebuchet",Serif;
+	float:right;
+	color:#333;
+	margin:0px;
+	padding:15px;
+	width:200px;
+}
+
+	#nav ul{
+		list-style-type:none;
+		margin:0px;
+		padding:0px 10px;
+	}
+
+	#nav ul li{
+		display:inline;
+		float: right;
+	}
+
+	#nav ul li a{
+		display:block;
+		padding:12px;
+		color:#333;
+		text-decoration:none;
+	}
+
+	#nav ul li a:hover{
+		display:block;
+		padding:12px;
+		color:#99A2B5;
+	}
+
+
+#main{
+
+	width:960px;
+	background:#dae2e4 url(../images/white_bar.png) top right repeat-y;
+	border:5px solid #fff;
+	margin:0px 10px;
+	font:12px/18px verdana;
+	color:#666;
+	float:left;
+	margin:0px 0px 25px 0px;
+}
+
+#workspace{
+	font:12px Verdana;
+	color:#000;
+	width:700px;
+	padding:15px;
+	float:left;
+}
+
+#main h1{
+	font:normal 32px "Trebuchet",Serif;
+	color:#517599;
+	background:#AFC0C7;
+	margin:0px;
+	display:block;
+	padding:8px 15px 6px 15px;
+}
+
+#main h2{
+	font:normal 18px arial;
+	margin:15px 0px;
+}
+
+#main p{
+	margin:15px 0px;
+}
+
+/* actions */
+
+.request_selector{
+	margin:1px 10px 35px 0px;
+	float:left;
+}
+
+.request_selector input{
+	border:1px solid #666;
+	background:#eee;
+}
+
+.actions{
+	float:right;
+	position:relative;
+	top:10px;
+}
+
+#main .warning p, #main .error p, #main .success p {
+	margin:0px;
+	padding:0px;
+}
+
+#main .warning h2, #main .error h2, #main .success h2 {
+	margin:0px;
+	margin-bottom:10px;
+	padding:0px;
+}
+
+a.warning, a.error, a.success, a.cancel{
+	padding:5px;
+}
+
+.warning{
+	border:1px solid #FF9900;
+	background:#FFCE84;
+	padding:10px;
+	margin:5px 0px;
+	text-decoration:none;
+	color:#000;
+}
+
+.error{
+	border:1px solid #FF0000;
+	background:#FF9595;
+	padding:10px;
+	margin:5px 0px;
+	text-decoration:none;
+	color:#660000;
+}
+
+.success{
+	border:1px solid #01FF01;
+	background:#B0FFB0;
+	padding:10px;
+	margin:5px 0px;
+	text-decoration:none;
+	color:#003300;
+}
+
+.cancel{
+	border:1px solid #666;
+	background:#eee;
+	padding:10px;
+	margin:5px 0px;
+	text-decoration:none;
+	color:#333;
+}
+
+
+	
+
+

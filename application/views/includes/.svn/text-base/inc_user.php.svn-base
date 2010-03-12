@@ -1,0 +1,38 @@
+<div id="user_status">
+	<?php 
+
+		if($this->session->userdata('loggedin')=='true'){
+			?>
+			<div style="float:right;">[ <a href="/login/goodbye/">Logout</a> ] </div>
+			<h1>Hello, <?=$this->session->userdata('first_name')?></h1>
+			<p><strong>Your Role:</strong> <? foreach($this->session->userdata('privs') as $priv){ echo($priv);}?></p>
+			<p>Currently You Have:</p>
+			<ul>
+				<li>(<strong><?=$this->Fact->getCount('pending', $this->session->userdata('user_id')); ?></strong>) Pending Facts</li>
+				<li>(<strong style="font:bold; color:#009900;"><?= $this->Fact->getCount('approved', $this->session->userdata('user_id')); ?></strong>) Approved Facts</li>
+				<li>(<strong style="font:bold; color:#990000;"><?= $this->Fact->getCount('rejected', $this->session->userdata('user_id')); ?></strong>) Rejected Facts</li>
+			</ul>
+			<p><a href="/dashboard/">Your Stats</a></p>
+			<p><a href="/signup/change_password/">Change Password</a></p>
+		
+			<?php 
+
+			$privs = $this->session->userdata('privs');
+
+			if($this->User->isAllowed($privs, array('admin','god','approver'))){
+				
+				?>
+				<div id="admin_stuff">
+					<h1>Admin:</h1>
+					<p>(<strong><?=$this->Fact->getCount('pending'); ?></strong>) Pending Fact Approvals</p>
+					<p><a href="/dashboard/admin">Administrate Facts</a></p>
+				</div>
+				<?
+			}
+
+
+		}
+
+	?>
+
+</div>

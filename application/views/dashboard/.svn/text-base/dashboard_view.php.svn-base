@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<head>
+<title>Welcome to Jesus Christ Facts</title>
+<? $this->load->view('includes/inc_common'); ?>
+</head>
+
+<body>
+
+	<div id="container">
+	
+		<? $this->load->view('includes/inc_nav'); ?>
+		
+		<div id="clear"></div>
+	
+		<? $this->load->view('includes/inc_header'); ?>
+	
+		<div id="right">
+		
+			<? $this->load->view('includes/inc_login'); ?>
+			
+		</div>
+	
+		<div id="main">
+			
+			<h1>Dashboard</h1>
+			<h2>Add A Fact</h2>
+			<div id="add_fact">
+				<?php 
+
+					if(@$message){
+						echo("<div id='response'><strong>$message</strong></div>");
+					} 
+
+				?>
+				<form name="add_fact" action="/dashboard/add_fact/" method="post" accept-charset="utf-8">
+					<?=form_error('fact');?>
+					<label>Fact:</label> <input type="text" name="fact" value="" id="fact" />
+
+					<p align="right"><input type="submit" class="submit" onclick="return confirm('Are you sure you are ready to submit this fact?');" value="Submit Fact" /></p>
+				</form>
+			</div>
+		
+			<h2>My Approved Facts</h2>
+			<?php 
+
+				foreach($approved as $row){
+					print "<div id=\"$row[id]_pending\" class=\"fact_div\"><p>$row[fact_text]</p></div>\n";
+				} 
+
+			?>
+			<h2>My Rejected Facts</h2>
+			<?php 
+
+				foreach($rejected as $row){
+					print "<div id=\"$row[id]_pending\" class=\"fact_div\"><p>$row[fact_text]</p></div>\n";
+				} 
+
+			?>
+			
+		</div>
+
+		<div id="clear"></div>
+
+	</div>
+
+	<? $this->load->view('includes/inc_footer'); ?>
+
+</body>
+	</html>

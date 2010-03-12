@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<head>
+<title>Welcome to Jesus Christ Facts</title>
+<? $this->load->view('includes/inc_common'); ?>
+</head>
+
+<body>
+
+	<div id="container">
+	
+		<? $this->load->view('includes/inc_nav'); ?>
+		
+		<div id="clear"></div>
+	
+		<? $this->load->view('includes/inc_header'); ?>
+	
+		<div id="right">
+		
+			<? $this->load->view('includes/inc_login'); ?>			
+			
+		</div>
+	
+		<div id="main">
+			<h1>Admin</h1>
+			<?php 
+
+				if(@$message){
+					echo("<div id='response' class='err'>$message</div>");
+				} 
+
+			?>
+			<h2>Facts Awaiting Approval</h2>
+			<?php 
+
+				foreach($pending as $row){
+					print "<div id=\"$row[id]_pending\" class=\"fact_div\">
+							<a href=\"/dashboard/approve/$row[id]\" class=\"approve\" onclick=\"return confirm('Are you sure you want to approve this fact?')\">Approve</a>
+							<a href=\"/dashboard/reject/$row[id]\" class=\"reject\" onclick=\"return confirm('Are you sure you want to reject this fact?')\">Reject</a>
+							<p>$row[fact_text]</p>
+						   </div>\n";
+				} 
+
+			?>
+			
+		</div>
+
+		<div id="clear"></div>
+
+	</div>
+
+	<? $this->load->view('includes/inc_footer'); ?>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<?php 
+
+	if($this->session->userdata('loggedin') == 'true'){
+		include('inc_user.php');
+	}else{ 
+
+?>
+
+
+	
+	<div id="err_effect"><div id="err" class="err"></div></div>
+
+	<h1>Login</h1>
+	<form id="login_now" action="/login/login_attempt/" method="post">
+		<div id="login">
+			Username:<br/>
+			<input id="username" type="text" name="username" class="login_form" tabIndex="1" /><br />
+			Password: <br />
+			<input type="password" name="password" class="login_form" tabIndex="2" /><br />
+			<input type="submit" id="login_button" name="login" value="Login" class="login_submit" />
+		</div>
+
+		<div id="login_options">
+			<p>Forgot Your <a onClick="show_forgot_password()">Password</a>?</p>
+			<p>Want to <a href="/signup/">Signup</a>?</p>
+		</div>
+	</form>
+
+	<div id="password_div">
+		<div id="password_response">
+			<form id="retrieve_password" action="/login/retrieve_password/" method="post">
+				Please enter your email address:<br />
+				<input type="text" name="email_address" class="password_form" /><br />
+				<input type="button" id="password_button" class="password_submit" value="Retrieve!">
+			</form>					
+		</div>
+	</div>
+
+
+	<script type="text/javascript" src="/js/login.js"></script>
+	
+
+
+<? }?>

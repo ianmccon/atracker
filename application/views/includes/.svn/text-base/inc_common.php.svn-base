@@ -1,0 +1,11 @@
+<link rel="stylesheet" href="/styles/main.css" type="text/css" media="screen" title="no title" charset="utf-8">
+
+<script type="text/javascript" src="/js/prototype.js"></script>
+<script type="text/javascript" src="/js/scriptaculous.js?load=effects"></script>
+
+<script type="text/javascript" charset="utf-8">
+	var browser=navigator.appName;
+	if(browser == "Microsoft Internet Explorer"){
+		window.location = "no_ie.html";
+	}
+</script>

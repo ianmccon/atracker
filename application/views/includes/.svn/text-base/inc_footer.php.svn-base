@@ -1,0 +1,14 @@
+<div id="footer">
+	<div id="foot_links">
+		<ul>
+			<li><a href="/">Home</a></li>
+			<li><a href="/facts/">Facts</a></li>
+			<li><a href="/videos/">Videos</a></li>
+			<li><a href="#">Shirt Designer</a></li>
+			<li><a href="/about/">About Us</a></li>
+			<li><a href="/contact/">Contact Us</a></li>
+		</ul>
+	</div>
+</div>
+
+<div id="overlay"></div>
