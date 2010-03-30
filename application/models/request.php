@@ -49,11 +49,12 @@ class Request extends Model {
 		}
 	}
 	
-	//adds requests pass in dates as YYYY-MM-DD 
+	//adds requests 
 	function add($user_id, $start, $end, $type_id){
 		
-		$start_date = mysql_to_unix($start);
-		$end_date = mysql_to_unix($end);
+		
+		$start_date = strtotime($start);
+		$end_date = strtotime($end);
 		
 		//now get the date details
 		$start_date_array = getdate($start_date);	
@@ -61,9 +62,12 @@ class Request extends Model {
 		
 		//now lets get all the days and get ready to put it in the DB.
 		for ($i=$start_date; $i <= $end_date; $i = round($i + 86400)) { 
+			
 			$day = getdate($i);
 			
 			if($day['weekday'] !== 'Saturday' && $day['weekday'] !== 'Sunday'){
+				
+				//print_r(unix_to_human($day[0]));
 				
 				$mysql_date = explode(" ", unix_to_human($day[0]));
 				$request_data = array(
@@ -92,6 +96,7 @@ class Request extends Model {
 				}
 			}
 		}
+		
 		return $msg;
 	}
 	
